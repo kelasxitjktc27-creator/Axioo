@@ -1,0 +1,230 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #778899;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/*Popup*/
+.popup {
+    position: fixed;
+    inset: 0;
+    background: #B0C4DE;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000
+}
+
+.popup-content {
+    background: #778899;
+    padding: 22px;
+    border-radius: 14px;
+    max-width: 340px;
+    text-align: center;
+    animation: fadeIn 0.35s ease;
+}
+
+.popup-content h4 {
+    color: white;
+}
+
+.popup-content img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.popup-content h2 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #fff;
+}
+
+.popup-content p {
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+#closePopup {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    background: #0b76ff;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/*Album Section*/
+.album-section {
+    margin-top: 40px;
+    text-align: center;
+    padding: 10px 20px;
+    flex: 1;
+}
+
+.album-title {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #fff;
+}
+
+.album-subtitle {
+    font-size: 15px;
+    color: #f6f6f6;
+    margin-bottom: 25px;
+}
+
+/*Album Grid*/
+.album {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 22px;
+}
+
+/*Album Item*/
+.album-item {
+    background: #686868;
+    border-radius: 14px;
+    padding: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.25s ease;
+}
+
+.album-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12);
+}
+
+/*Gambar/Video*/
+.album-item img,
+.album-item video {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+
+/*Teks*/
+.album-text {
+    font-weight: 600;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+/*Footer*/
+.footer {
+    background: #686868;
+    color: #fff;
+    text-align: center;
+    padding: 20px 10px;
+    margin-top: 40px;
+    border-radius: 14px 14px 0 0;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.footer-content p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.footer-icons {
+    margin-top: 10px;
+}
+
+.footer-icons a {
+    color: #fff;
+    font-size: 20px;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.footer-icons a:hover {
+    transform: scale(1.2);
+}
+
+/*Efek Salju*/
+.snowflake {
+    position: fixed;
+    top: -10px;
+    color: #fff;
+    font-size: 20px;
+    pointer-events: none;
+    z-index: 1000;
+    animation: fall 15s linear infinite;
+    opacity: 0.8;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+/*Mobile*/
+@media (max-width: 500px) {
+    .album-title {
+        font-size: 22px;
+    }
+
+    .album-subtitle {
+        font-size: 14px;
+    }
+
+    .album-item img,
+    .album-item video {
+        height: 150px;
+    }
+
+    .album-text {
+        font-size: 13px;
+    }
+
+    .snowflake {
+        font-size: 15px;
+    }
+
+    .footer-content p {
+        font-size: 12px;
+    }
+
+    .footer-icons a {
+        font-size: 18px;
+        margin: 0 8px;
+    }
+}
+
+.popup-item {
+    border-radius: 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+}
